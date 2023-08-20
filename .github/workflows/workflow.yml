@@ -8,6 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    environment:
+      name: release
+      url: https://pypi.org/project/nachash/
+
     - name: Check out code
       uses: actions/checkout@v2
 
