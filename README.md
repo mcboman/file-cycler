@@ -30,6 +30,11 @@ Copy the `FileCycle` class into your project.
 
 ### Initialization
 
+PIP:
+`pip install file-cycle`
+
+
+Manually:
 Initialize the `FileCycle` class by specifying the working directory prefix, the working directory, and the retention days.
 
 ```python
