@@ -4,16 +4,16 @@ import time
 import unittest
 from datetime import datetime, timedelta
 
-from file_rotation_manager import FileRotationManager
+from src.file_cycle import FileCycle
 
 
-class TestFileRotationManager(unittest.TestCase):
+class TestFileCycle(unittest.TestCase):
     def setUp(self):
         self.tmp_dir = tempfile.TemporaryDirectory()
         self.workdir_prefix = self.tmp_dir.name
         self.workdir = 'rotation'
         self.retention_days = 30
-        self.file_rotation_manager = FileRotationManager(
+        self.file_rotation_manager = FileCycle(
             workdir_prefix=self.workdir_prefix,
             workdir=self.workdir,
             retention_days=self.retention_days

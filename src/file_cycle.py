@@ -1,9 +1,10 @@
 import shutil
 from datetime import datetime, timedelta
 from os import getenv, listdir, makedirs, path
+from tempfile import gettempdir
 
 
-class FileRotationManager():
+class FileCycle():
     """
     Manages file rotation based on specified retention policies.
 
@@ -15,7 +16,7 @@ class FileRotationManager():
         latest_folder (str): The path to the 'latest' folder within the working directory.
     """
     def __init__(self,
-                 workdir_prefix=getenv('WORKDIR_PREFIX', '/tmp'),
+                 workdir_prefix=getenv('WORKDIR_PREFIX', gettempdir()),
                  workdir=getenv('WORKDIR', '/rotation'),
                  retention_days=30):
         """
